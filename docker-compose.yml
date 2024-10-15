@@ -1,0 +1,21 @@
+services:
+  fhir-server:
+    image: hapiproject/hapi:latest
+    restart: unless-stopped
+    container_name: ${server_name}
+    ports:
+      - ${server_port:-8080}:8080
+    env_file:
+      - .env
+
+    volumes:
+      - ./web:/custom
+      - ./apps:/apps
+      - ./conf:/data/hapi      
+
+##### For big configurations, just put the file in the conf folder and uncomment the following lines
+    #   - ./conf:/data/hapi
+    environment:
+      SPRING_CONFIG_LOCATION: 'file:///data/hapi/application.yml'
+
+

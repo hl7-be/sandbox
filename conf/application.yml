@@ -1,0 +1,133 @@
+server:
+  port: 8080
+  servlet:
+    context-path: 
+management:
+  endpoints:
+    enabled-by-default: false  
+    web:
+      exposure:
+        include: "*"
+
+spring:
+  main:
+    allow-circular-references: true
+    allow-bean-definition-overriding: true
+  flyway:
+    enabled: false
+    check-location: false
+    baselineOnMigrate: true
+    fail-on-missing-locations: false
+  datasource:
+    url: jdbc:h2:mem:test_mem
+    username: sa
+    password: null
+    driverClassName: org.h2.Driver
+    max-active: 15
+
+    # database connection pool size
+    hikari:
+      maximum-pool-size: 10
+  jpa:
+    properties:
+      hibernate.format_sql: false
+      hibernate.show_sql: false
+      hibernate.dialect: ca.uhn.fhir.jpa.model.dialect.HapiFhirH2Dialect
+      hibernate.search.enabled: true
+      hibernate.search.backend.type: lucene
+      hibernate.search.backend.directory.type: local-filesystem
+      hibernate.search.backend.directory.root: target/lucenefiles
+      hibernate.search.backend.lucene_version: lucene_current
+  batch:
+    job:
+      enabled: false
+
+
+
+
+hapi:
+  fhir:
+    openapi_enabled: true
+    fhir_version: R4
+    allowed_bundle_types: COLLECTION,DOCUMENT,MESSAGE,TRANSACTION,TRANSACTIONRESPONSE,BATCH,BATCHRESPONSE,HISTORY,SEARCHSET
+    allow_cascading_deletes: true
+    allow_contains_searches: true
+    install_transitive_ig_dependencies: true
+#    allow_external_references: true
+    allow_multiple_delete: true
+    allow_override_default_search_params: true
+    auto_create_placeholder_reference_targets: false
+    ips_enabled: false
+    language_search_parameter_enabled: true
+    #default_encoding: JSON
+    #default_pretty_print: true
+    enable_index_missing_fields: true
+    enable_index_of_type: true
+    enable_index_contained_resource: true
+
+    use_apache_address_strategy: true
+    use_apache_address_strategy_https: true
+
+    custom_content_path: /custom
+    app_content_path: /apps
+  #  allow_contains_searches: true
+    allow_external_references: true
+    default_encoding: JSON
+    default_pretty_print: true
+    default_page_size: 10
+    client_id_strategy: ALPHANUMERIC
+  #  filter_search_enabled: true
+    narrative_enabled: true
+    cors:
+      allow_Credentials: true
+      # These are allowed_origin patterns, see: https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/cors/CorsConfiguration.html#setAllowedOriginPatterns-java.util.List-
+      allowed_origin:
+        - '*'
+    
+    advanced_lucene_indexing: false
+    bulk_export_enabled: false
+    bulk_import_enabled: false
+    logical_urls:
+      - http://terminology.hl7.org/*
+      - https://terminology.hl7.org/*
+      - http://snomed.info/*
+      - https://snomed.info/*
+      - http://unitsofmeasure.org/*
+      - https://unitsofmeasure.org/*
+      - http://loinc.org/*
+      - https://loinc.org/*
+
+    ig_runtime_upload_enabled: true
+
+    search-coord-core-pool-size: 20
+    search-coord-max-pool-size: 100
+    search-coord-queue-capacity: 200
+    tester:
+      home:
+        name: Local Tester
+        server_address: 'http://localhost:8080/fhir'
+        refuse_to_fetch_third_party_urls: false
+        fhir_version: R4
+
+      global:
+        name: Global Tester
+        server_address: "https://hapi.fhir.org/baseR4"
+        refuse_to_fetch_third_party_urls: false
+        fhir_version: R4
+
+    inline_resource_storage_below_size: 4000
+
+    implementationguides:
+      # ips:
+      #   packageUrl: https://hl7.org/fhir/uv/ips/2024Sep/package.tgz
+      #   name: hl7.fhir.uv.ips
+      #   version: 2.0.0-ballot
+      #   reloadExisting: true
+      #   installMode: STORE_AND_INSTALL
+      bevacc:
+        packageUrl: https://build.fhir.org/ig/hl7-be/vaccination/branches/releasecandidate/package.tgz
+        name: hl7.fhir.be.vaccination
+        version: 1.1.0
+        reloadExisting: true
+        installMode: STORE_AND_INSTALL
+

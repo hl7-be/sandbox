@@ -1,0 +1,35 @@
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.error-count {
+    background-color: rgb(241, 169, 169);
+    color: black;
+    padding: 5px;
+    font-weight: bold;
+
+}
+
+.warning-count {
+    background-color: rgb(246, 246, 140);
+    color: black;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.info-count {
+    background-color: rgb(212, 212, 212);
+    color: black;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.table-wrapper {
+    margin-top: 20px;
+}
+
+.drag-over {
+    background-color: #f0f8ff; /* Visual feedback for drag-over */
+    border: 2px dashed #00f;
+}
