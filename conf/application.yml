@@ -125,9 +125,58 @@ hapi:
       #   reloadExisting: true
       #   installMode: STORE_AND_INSTALL
       bevacc:
-        packageUrl: https://build.fhir.org/ig/hl7-be/vaccination/branches/releasecandidate/package.tgz
+        packageUrl: https://www.ehealth.fgov.be/standards/fhir/vaccination/package.tgz
         name: hl7.fhir.be.vaccination
         version: 1.1.0
+        reloadExisting: true
+        installMode: STORE_AND_INSTALL
+
+      becore:
+        packageUrl: https://ehealth.fgov.be/standards/fhir/core/package.tgz
+        name: hl7.fhir.be.core
+        version: 2.1.2
+        reloadExisting: true
+        installMode: STORE_AND_INSTALL
+
+      beallergy:
+        packageUrl: https://ehealth.fgov.be/standards/fhir/allergy/package.tgz
+        name: hl7.fhir.be.allergy
+        version: 1.2.0
+        reloadExisting: true
+        installMode: STORE_AND_INSTALL
+
+      bemedication:
+        packageUrl: https://ehealth.fgov.be/standards/fhir/medication/package.tgz
+        name: hl7.fhir.be.medication
+        version: 1.0.0
+        reloadExisting: true
+        installMode: STORE_AND_INSTALL
+
+      becoreclinical:
+        packageUrl: https://ehealth.fgov.be/standards/fhir/core-clinical/package.tgz
+        name: hl7.fhir.be.core-clinical
+        version: 1.0.0
+        reloadExisting: true
+        installMode: STORE_AND_INSTALL
+
+      bepublichealth:
+        packageUrl: https://ehealth.fgov.be/standards/fhir/public-health/package.tgz
+        name: hl7.fhir.be.public-health
+        version: 1.0.3
+        reloadExisting: true
+        installMode: STORE_AND_INSTALL
+
+      beinfsec:
+        packageUrl: https://ehealth.fgov.be/standards/fhir/infsec/package.tgz
+        name: hl7.fhir.be.infsec
+        version: 1.2.0
+        reloadExisting: true
+        installMode: STORE_AND_INSTALL
+
+      bepatientwill:
+        packageUrl: https://ehealth.fgov.be/standards/fhir/patientwill/package.tgz
+        name: hl7.fhir.be.patientwill
+        version: 1.0.0
         reloadExisting: true
         installMode: STORE_AND_INSTALL
 

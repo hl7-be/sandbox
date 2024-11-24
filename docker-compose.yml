@@ -18,4 +18,3 @@ services:
     environment:
       SPRING_CONFIG_LOCATION: 'file:///data/hapi/application.yml'
 
-
