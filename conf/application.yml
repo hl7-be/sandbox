@@ -10,6 +10,15 @@ management:
         include: "*"
 
 spring:
+  web:
+    resources:
+      static-locations: >
+        classpath:/META-INF/resources/,
+        classpath:/resources/,
+        classpath:/static/,
+        classpath:/public/,
+        file:/custom/,
+        file:/apps/
   main:
     allow-circular-references: true
     allow-bean-definition-overriding: true
@@ -33,11 +42,13 @@ spring:
       hibernate.format_sql: false
       hibernate.show_sql: false
       hibernate.dialect: ca.uhn.fhir.jpa.model.dialect.HapiFhirH2Dialect
-      hibernate.search.enabled: true
-      hibernate.search.backend.type: lucene
-      hibernate.search.backend.directory.type: local-filesystem
-      hibernate.search.backend.directory.root: target/lucenefiles
-      hibernate.search.backend.lucene_version: lucene_current
+      hibernate.search.enabled: false
+      # hibernate.search.backend.type: lucene
+      # hibernate.search.backend.directory.type: local-filesystem
+      # hibernate.search.backend.directory.root: target/lucenefiles
+
+      # hibernate.search.backend.type: elasticsearch
+      # hibernate.search.backend.hosts: http://elasticsearch:9200
   batch:
     job:
       enabled: false
