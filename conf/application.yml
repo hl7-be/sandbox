@@ -118,9 +118,9 @@ hapi:
     inline_resource_storage_below_size: 4000
 
     implementationguides:
-      ips:
-        packageUrl: https://hl7.org/fhir/uv/ips/2024Sep/package.tgz
-        name: hl7.fhir.uv.ips
-        version: 2.0.0-ballot
+      smart_who_int_icvp:
+        packageUrl: https://worldhealthorganization.github.io/smart-icvp/branches/ritika/package.tgz
+        name: smart.who.int.icvp
+        version: 0.1.0
         reloadExisting: true
         installMode: STORE_AND_INSTALL

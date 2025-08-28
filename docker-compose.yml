@@ -1,6 +1,6 @@
 services:
   fhir-server:
-    image: hapiproject/hapi:latest
+    image: eu.gcr.io/fhir-ch/matchbox:latest
     restart: unless-stopped
     container_name: ${server_name}
     ports:
@@ -11,19 +11,19 @@ services:
     volumes:
       - ./web:/custom
       - ./apps:/apps
-      - ./conf:/data/hapi      
+      - ./conf:/conf      
 
 ##### For big configurations, just put the file in the conf folder and uncomment the following lines
     #   - ./conf:/data/hapi
     environment:
       SPRING_CONFIG_LOCATION: 'file:///data/hapi/application.yml'
 
-  document-server:
-    build:
-      context: ./document-server
-    container_name: document-server
-    restart: unless-stopped
-    ports:
-      - "8081:5000"
-    volumes:
-      - ./documents:/app/uploads
+  # document-server:
+  #   build:
+  #     context: ./document-server
+  #   container_name: document-server
+  #   restart: unless-stopped
+  #   ports:
+  #     - "8081:5000"
+  #   volumes:
+  #     - ./documents:/app/uploads
