@@ -18,3 +18,12 @@ services:
     environment:
       SPRING_CONFIG_LOCATION: 'file:///data/hapi/application.yml'
 
+  document-server:
+    build:
+      context: ./document-server
+    container_name: document-server
+    restart: unless-stopped
+    ports:
+      - "8081:5000"
+    volumes:
+      - ./documents:/app/uploads
