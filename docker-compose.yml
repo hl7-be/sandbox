@@ -12,6 +12,7 @@ services:
       - ./web:/custom
       - ./apps:/apps
       - ./conf:/conf      
+      - ./conf:/data/hapi
 
 ##### For big configurations, just put the file in the conf folder and uncomment the following lines
     #   - ./conf:/data/hapi
