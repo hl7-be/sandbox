@@ -1,6 +1,6 @@
 services:
   fhir-server:
-    image: eu.gcr.io/fhir-ch/matchbox:latest
+    image:  europe-west6-docker.pkg.dev/ahdis-ch/ahdis/matchbox:v4.0.12
     restart: unless-stopped
     container_name: ${server_name}
     ports:
