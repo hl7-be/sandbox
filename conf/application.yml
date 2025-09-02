@@ -127,7 +127,7 @@ hapi:
       bevacc:
         packageUrl: https://www.ehealth.fgov.be/standards/fhir/vaccination/package.tgz
         name: hl7.fhir.be.vaccination
-        version: 1.1.0
+        version: 1.1.1
         reloadExisting: true
         installMode: STORE_AND_INSTALL
 
@@ -179,4 +179,5 @@ hapi:
         version: 1.0.0
         reloadExisting: true
         installMode: STORE_AND_INSTALL
+
 
