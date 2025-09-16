@@ -124,17 +124,18 @@ hapi:
       #   version: 2.0.0-ballot
       #   reloadExisting: true
       #   installMode: STORE_AND_INSTALL
-      bevacc:
-        packageUrl: https://www.ehealth.fgov.be/standards/fhir/vaccination/package.tgz
-        name: hl7.fhir.be.vaccination
-        version: 1.1.1
-        reloadExisting: true
-        installMode: STORE_AND_INSTALL
 
       becore:
         packageUrl: https://ehealth.fgov.be/standards/fhir/core/package.tgz
         name: hl7.fhir.be.core
         version: 2.1.2
+        reloadExisting: true
+        installMode: STORE_AND_INSTALL
+      
+      bevacc:
+        packageUrl: https://www.ehealth.fgov.be/standards/fhir/vaccination/package.tgz
+        name: hl7.fhir.be.vaccination
+        version: 1.1.1
         reloadExisting: true
         installMode: STORE_AND_INSTALL
 
@@ -154,6 +155,20 @@ hapi:
 
       becoreclinical:
         packageUrl: https://ehealth.fgov.be/standards/fhir/core-clinical/package.tgz
+        name: hl7.fhir.be.core-clinical
+        version: 1.0.0
+        reloadExisting: true
+        installMode: STORE_AND_INSTALL
+
+      belab:
+        packageUrl: https://ehealth.fgov.be/standards/fhir/lab/mycarenet.tgz
+        name: hl7.fhir.be.mycarenet
+        version: 2.1.2
+        reloadExisting: true
+        installMode: STORE_AND_INSTALL
+
+      belab:
+        packageUrl: https://ehealth.fgov.be/standards/fhir/lab/package.tgz
         name: hl7.fhir.be.core-clinical
         version: 1.0.0
         reloadExisting: true
@@ -180,4 +195,19 @@ hapi:
         reloadExisting: true
         installMode: STORE_AND_INSTALL
 
+
+      bepatientcare:
+        packageUrl: https://ehealth.fgov.be/standards/fhir/patient-care/package.tgz
+        name: hl7.fhir.be.patient-care
+        version: 1.0.0
+        reloadExisting: true
+        installMode: STORE_AND_INSTALL
+
+
+      bepatientwill:
+        packageUrl: https://ehealth.fgov.be/standards/fhir/pss/package.tgz
+        name: hl7.fhir.be.pss
+        version: 1.0.0
+        reloadExisting: true
+        installMode: STORE_AND_INSTALL
 
